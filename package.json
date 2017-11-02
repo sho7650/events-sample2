@@ -1,0 +1,11 @@
+{
+  "name": "events",
+  "version": "0.1.1",
+  "description": "A demonstration of the Platform Events for Solution Engineers of Salesforce.com",
+  "author": "Takashi Abe",
+  "license": "ISC",
+  "dependencies": {
+    "jsforce": "^1.8.0",
+    "dotenv": "^4.0.0"
+  }
+}
