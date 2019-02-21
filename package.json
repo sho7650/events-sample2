@@ -1,11 +1,11 @@
 {
-  "name": "events",
-  "version": "0.1.1",
-  "description": "A demonstration of the Platform Events for Solution Engineers of Salesforce.com",
+  "name": "cdc-events",
+  "version": "0.1.0",
+  "description": "A demonstration of the Platform Events with Change data Capture",
   "author": "Takashi Abe",
   "license": "ISC",
   "dependencies": {
-    "jsforce": "^1.8.0",
-    "dotenv": "^4.0.0"
+    "jsforce": "^1.9.0",
+    "dotenv": "^6.2.0"
   }
 }
