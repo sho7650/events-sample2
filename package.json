@@ -5,7 +5,8 @@
   "author": "Takashi Abe",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^6.2.0",
     "jsforce": "^1.9.0",
-    "dotenv": "^6.2.0"
+    "jsonwebtoken": "^8.5.0"
   }
 }
