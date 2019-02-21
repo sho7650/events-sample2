@@ -1,6 +1,5 @@
-/*
- * publisher.js
- */
+#!/usr/bin/env node
+
 const jwt = require('./jwt');
 
 jwt.login((conn) => {
@@ -12,7 +11,7 @@ jwt.login((conn) => {
 
     console.log(`new account name = ${msg.Name}`);
     conn.sobject("Account").create(msg, (err, ret) => {
-      if (err || !ret.success) { return console.error(err, ret); }
+      if (err || !ret.success) { console.error(err, ret); }
     });
   } while (++i < process.argv.length);
 

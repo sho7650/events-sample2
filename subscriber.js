@@ -1,6 +1,5 @@
-/*
- * publisher.js
- */
+#!/usr/bin/env node
+
 const jwt = require('./jwt');
 
 jwt.login((conn) => {

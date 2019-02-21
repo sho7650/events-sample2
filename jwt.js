@@ -38,16 +38,17 @@ exports.login = function(callback) {
     }
   };
   
+  // request to login
   request(post, function (err, response, body) {
     if (err) {
       return console.error(err);
     }
-    var ret = JSON.parse(body);
-    var conn = new jsforce.Connection({
+
+    const ret = JSON.parse(body);
+    const conn = new jsforce.Connection({
       accessToken: ret.access_token,
       instanceUrl: ret.instance_url
     });
-  
     console.log('login successfully.');
 
     callback(conn);
