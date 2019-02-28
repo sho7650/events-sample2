@@ -18,6 +18,18 @@
 - node.js 10.x または 11.x ランタイムが使えるようになっていること
 - git コマンドが利用できること
 
+### 導入方法
+
+次のコマンドを実行します
+
+```bash
+git clone https://github.com/tabesfdc/events-sample2.git
+```
+
+ローカルに `events-sample2` というディレクトリができます。各コマンドは、このディレクトリ内にありますので、`cd events-sample2` でカレントディレクトリを変更します。
+
+次に、`npm install` コマンドを実行して、必要な npm パッケージをどうにゅうします。
+
 ### 事前準備
 
 `.env` ファイルの準備が必要です。次がサンプルです。
@@ -31,24 +43,12 @@ SUBJECT='test@example.com'
 
 各々は次のとおりです
 
-`PRIVATE_KEY` - 作成した秘密鍵を`base64`化したものを定義します。例えば `base64 ./cert/server.key` などで作成します
-`ISSUER` - 接続アプリケーション内の`コンシューマ鍵`
-`AUDIENCE` - `https://login.salesforce.com` 固定
-`SUBJECT` - ログインするユーザ名
+- `PRIVATE_KEY` - 作成した秘密鍵を`base64`化したものを定義します。例えば `base64 ./cert/server.key` などで作成します
+- `ISSUER` - 接続アプリケーション内の`コンシューマ鍵`
+- `AUDIENCE` - `https://login.salesforce.com` 固定
+- `SUBJECT` - ログインするユーザ名
 
 これを、プログラムのルートディレクトリに配置します
-
-### 導入方法
-
-次のコマンドを実行します
-
-```bash
-git clone https://github.com/tabesfdc/events-sample2.git
-```
-
-ローカルに `events-sample2` というディレクトリができます。各コマンドは、このディレクトリ内にありますので、`cd events-sample2` でカレントディレクトリを変更します。
-
-次に、`npm install` コマンドを実行して、必要な npm パッケージをどうにゅうします。
 
 ### 実行方法
 
