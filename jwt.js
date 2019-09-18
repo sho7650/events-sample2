@@ -27,8 +27,8 @@ const claim = {
 const token = jwt.sign(claim, secret, { algorithm: 'RS256' });
 
 // login salesforce with JWT
-exports.login = function(callback) {
-    // prepare loging in
+exports.login = function (callback) {
+  // prepare loging in
   const post = {
     method: 'POST',
     url: TOKEN_ENDPOINT_URL,
@@ -37,14 +37,17 @@ exports.login = function(callback) {
       assertion: token
     }
   };
-  
+
   // request to login
   request(post, function (err, response, body) {
     if (err) {
       return console.error(err);
     }
-
     const ret = JSON.parse(body);
+    if (ret.error) {
+      return console.error(`login error: ${ret.error_description}`);
+    }
+
     const conn = new jsforce.Connection({
       accessToken: ret.access_token,
       instanceUrl: ret.instance_url
@@ -53,4 +56,4 @@ exports.login = function(callback) {
 
     callback(conn);
   });
-} 
+};
