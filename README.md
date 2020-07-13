@@ -147,8 +147,8 @@ node .¥norce-subscriber.js
 ├── README.md             このファイル
 ├── jwt.js                認証・ログイン周りのモジュール
 ├── nforce.js             認証・ログイン周りのモジュール(nforce用)
-├── nforce-publisher.js   イベントを公開する
-├── nforce-subscriber.js  配信されたイベントを取得する
+├── nforce-publisher.js   イベントを公開する (nforce版)
+├── nforce-subscriber.js  配信されたイベントを取得する (nforce版)
 ├── publisher.js          イベントを公開する
 └── subscriber.js         配信されたイベントを取得する
 ```
@@ -157,4 +157,4 @@ node .¥norce-subscriber.js
 
 ## nforce 版の存在について
 
-`nforce` 版を準備したのは、subscribe 時に `jsforce` ではエラーを取得する機構が利用できず、自由度の高い `nforce`版も準備しました。用途に応じて、サンプルを活用ください。
+`nforce` 版を準備したのは、subscribe 時に `jsforce` ではエラーを取得する機構が利用できず、自由度の高い `nforce`版も準備しました。用途に応じて、サンプルを活用ください。いずれの場合も、実行される内容に差異はありません。
