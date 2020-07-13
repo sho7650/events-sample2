@@ -4,12 +4,9 @@ const jwt = require("./jwt");
 
 jwt.login((conn) => {
   let msg = { dummy__c: "Publish test" };
-  let i = 2;
 
-  do {
-    if (process.argv.length > 2) {
-      msg.dummy__c = process.argv[i];
-    }
+  process.argv.slice(2, process.argv.length).forEach((arg) => {
+    msg.dummy__c = arg;
 
     console.log(`event message = ${msg.dummy__c}`);
     conn.sobject(process.env.TOPIC).create(msg, (err, ret) => {
@@ -19,5 +16,5 @@ jwt.login((conn) => {
         console.log(ret);
       }
     });
-  } while (++i < process.argv.length);
+  });
 });
