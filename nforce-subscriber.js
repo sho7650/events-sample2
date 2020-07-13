@@ -1,36 +1,13 @@
 #!/usr/bin/env node
-const nforce = require("nforce");
-require("dotenv").config();
+const nforce = require("./nforce.js");
 
-// set a org information to login
-const org = nforce.createConnection({
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  redirectUri: process.env.REDIRECT_URL,
-  apiVersion: process.env.API_VERSION,
-  environment: process.env.ENV,
-  mode: "single", // Platform Event MUST set a "single" mode
-  autoRefresh: true,
-});
-// put a connected application information
-console.log(org);
-
-const user = process.env.USER_ID;
-const pass = process.env.PASSWORD;
-
-// login and getting streaming events
-org.authenticate({ username: user, password: pass }, function (err, oauth) {
-  if (err) return console.log(err);
-
-  // put an oauth information
-  console.log(oauth);
-
+nforce.org((org, event) => {
   // connecting and set a topic
   const client = org.createStreamClient();
   const accs = client.subscribe({
     topic: process.env.TOPIC,
     isEvent: true, // you MUST set TRUE for subscribing Platform Events.
-    replayId: -2, // you MUST set it.
+    replayId: -1, // you MUST set it.
   });
 
   // CONNECTED
