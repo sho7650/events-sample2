@@ -87,16 +87,28 @@ TOPIC='TestingEvent__c'
 - Linux/Mac の場合
 
 ```bash
-./publisher.js [Account名 [Account名[...]]]
+./publisher.js [メッセージ [メッセージ [...]]]
+```
+
+または
+
+```bash
+./nforce-publisher.js [メッセージ [メッセージ [...]]]
 ```
 
 - Windows の場合 (試したことない)
 
 ```
-node .¥publisher.js [Account名 [Account名[...]]]
+node .¥publisher.js [メッセージ [メッセージ [...]]]
 ```
 
-いずれの場合も `Account名` の数に制限はありません。省略も可。省略した場合、`Publish test`という取引先が１件作成されます。
+または
+
+```bash
+node .¥nforce-publisher.js [メッセージ [メッセージ [...]]]
+```
+
+いずれの場合も `メッセージ` の数に制限はありません。省略も可。省略した場合は、イベントは公開しません。
 
 #### 取引先の変更内容をキャプチャします。
 
