@@ -45,3 +45,5 @@ jspm_packages
 # Environments values
 .env
 
+# temporary
+/tmp
