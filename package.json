@@ -7,7 +7,7 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "jsforce": "^1.9.3",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "nforce": "^1.12.2",
     "websocket-extensions": "^0.1.4"
   }
